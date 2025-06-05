@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Task API Client</h1>
+    <div class="main-content">
+      <div class="controls">
+        <div class="control-group">
+          <button onclick="getAllTasks()">Get All Tasks</button>
+        </div>
+
+        <div class="control-group">
+          <input id="tidInput" placeholder="Enter tid" />
+          <button onclick="getTaskByTid()">Get Task by tid</button>
+          <button onclick="deleteTask()">Delete Task by tid</button>
+        </div>
+
+        <h3>Edit Task</h3>
+        <div class="control-group edit-task" style="display:none; flex-direction: column; gap: 10px;">
+          <input id="edit_tid" placeholder="tid" disabled />
+          <input id="edit_title" placeholder="title" />
+          <input id="edit_description" placeholder="description" />
+          <input id="edit_priority" placeholder="priority (Low|Medium|High)" />
+          <label>
+            Completed:
+            <input type="checkbox" id="edit_completed" />
+          </label>
+          <button onclick="submitUpdateTask()">Submit Update</button>
+        </div>
+
+        <h3>Create New Task</h3>
+        <div class="control-group create-task">
+          <input id="ctid" placeholder="tid" />
+          <input id="ctitle" placeholder="title" />
+          <input id="cdesc" placeholder="description" />
+          <input id="cpriority" placeholder="priority (Low|Medium|High)" />
+          <button onclick="createTask()">Create Task</button>
+        </div>
+      </div>
+
+      <pre id="output"></pre>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

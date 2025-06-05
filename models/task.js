@@ -1,9 +1,12 @@
-import Task from '../models/task.js';
+import mongoose from 'mongoose';
+
 const TaskSchema = new mongoose.Schema({
   tid: { type: String, unique: true, required: true },
   title: { type: String, required: true },
   description: String,
-completed: { type: Boolean, default: false },
+  completed: { type: Boolean, default: false },
 }, { timestamps: true });
 
-module.exports = mongoose.model('Task', TaskSchema);
+const Task = mongoose.model('Task', TaskSchema);
+
+export default Task;
