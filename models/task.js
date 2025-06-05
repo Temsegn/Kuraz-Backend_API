@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-
+import Task from '../models/task.js';
 const TaskSchema = new mongoose.Schema({
   tid: { type: String, unique: true, required: true },
   title: { type: String, required: true },
